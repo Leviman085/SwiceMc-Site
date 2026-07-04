@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swice | Minecraft PvP 1.8.9</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>SWICE • Minecraft PvP 1.8.9</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,152 +16,424 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Poppins,sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:#0b0f18;
+
+background:#090d15;
 color:white;
+
+}
+
+body::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+body::-webkit-scrollbar-thumb{
+
+background:#1d6dff;
+
 }
 
 header{
+
 position:fixed;
 top:0;
-width:100%;
+left:0;
+right:0;
+height:80px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 60px;
-background:rgba(10,15,30,.85);
-backdrop-filter:blur(12px);
+
+padding:0 80px;
+
+background:rgba(8,10,20,.82);
+
+backdrop-filter:blur(15px);
+
 z-index:999;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
 }
 
 .logo{
-font-size:32px;
-font-weight:700;
-color:#3ea6ff;
+
+font-size:42px;
+font-weight:800;
+color:#2d8cff;
+letter-spacing:3px;
+
+}
+
+nav{
+
+display:flex;
+gap:35px;
+
 }
 
 nav a{
-text-decoration:none;
+
 color:white;
-margin-left:25px;
-transition:.3s;
+text-decoration:none;
 font-weight:500;
+transition:.3s;
+
 }
 
 nav a:hover{
-color:#3ea6ff;
+
+color:#2d8cff;
+
 }
 
 .hero{
+
 height:100vh;
+
+background:
+
+linear-gradient(rgba(5,8,15,.70),rgba(5,8,15,.90)),
+
+url("https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=2000&q=80");
+
+background-size:cover;
+
+background-position:center;
+
 display:flex;
-justify-content:center;
+
 align-items:center;
+
+justify-content:center;
+
 text-align:center;
-background:linear-gradient(135deg,#07111f,#10233f,#07111f);
+
 }
 
 .hero h1{
-font-size:80px;
-margin-bottom:10px;
+
+font-size:120px;
+
+font-weight:800;
+
+letter-spacing:5px;
+
 }
 
 .hero p{
+
 font-size:22px;
-color:#b8dfff;
-margin-bottom:30px;
+
+margin-top:15px;
+
+color:#c6dfff;
+
 }
 
-button{
-padding:15px 45px;
-font-size:18px;
-border:none;
+.buttons{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 40px;
+
 border-radius:10px;
-background:#1f8fff;
-color:white;
-cursor:pointer;
+
+text-decoration:none;
+
+font-weight:700;
+
 transition:.3s;
+
 }
 
-button:hover{
-background:#006eff;
-transform:scale(1.05);
+.play{
+
+background:#2d8cff;
+
+color:white;
+
+}
+
+.play:hover{
+
+transform:translateY(-5px);
+
+}
+
+.discord{
+
+background:#20263a;
+
+color:white;
+
+}
+
+.discord:hover{
+
+background:#2d8cff;
+
+}
+
+.ipbox{
+
+margin-top:45px;
+
+display:inline-flex;
+
+background:#111827;
+
+border-radius:12px;
+
+padding:20px;
+
+align-items:center;
+
+gap:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
 }
 
 .ip{
-margin-top:25px;
-font-size:22px;
-font-weight:bold;
-color:#3ea6ff;
+
+font-size:34px;
+
+font-weight:700;
+
+color:#2d8cff;
+
+}
+
+.copy{
+
+background:#2d8cff;
+
+border:none;
+
+padding:15px 30px;
+
+border-radius:8px;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:700;
+
 }
 
 section{
-padding:80px 10%;
+
+padding:100px 8%;
+
 }
 
-h2{
-font-size:40px;
+.title{
+
+font-size:45px;
+
+font-weight:800;
+
+margin-bottom:50px;
+
 text-align:center;
-margin-bottom:45px;
+
 }
 
 .cards{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
 }
 
 .card{
-background:#131b2c;
-padding:30px;
+
+background:#111827;
+
 border-radius:15px;
-transition:.3s;
-text-align:center;
+
+padding:35px;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.05);
+
 }
 
 .card:hover{
-transform:translateY(-8px);
-background:#19233a;
+
+transform:translateY(-10px);
+
+border-color:#2d8cff;
+
 }
 
 .card h3{
+
+font-size:28px;
+
 margin-bottom:15px;
-color:#3ea6ff;
+
+color:#2d8cff;
+
+}
+
+.card p{
+
+opacity:.8;
+
+line-height:1.7;
+
 }
 
 .stats{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
 }
 
 .stat{
-background:#131b2c;
-padding:35px;
+
+background:#111827;
+
+padding:40px;
+
 border-radius:15px;
+
 text-align:center;
+
 }
 
-.stat h3{
-font-size:42px;
-color:#3ea6ff;
+.stat h2{
+
+font-size:55px;
+
+color:#2d8cff;
+
+margin-bottom:10px;
+
+}
+
+.news{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:40px;
+
+}
+
+.post{
+
+background:#111827;
+
+padding:25px;
+
+border-radius:15px;
+
+}
+
+.sidebar{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.widget{
+
+background:#111827;
+
+padding:25px;
+
+border-radius:15px;
+
 }
 
 footer{
-background:#08111d;
-padding:35px;
+
+background:#06080f;
+
+padding:60px;
+
 text-align:center;
-margin-top:60px;
+
+border-top:1px solid rgba(255,255,255,.05);
+
 }
 
-footer a{
-color:#3ea6ff;
-text-decoration:none;
-margin:0 10px;
+footer h2{
+
+color:#2d8cff;
+
+margin-bottom:15px;
+
+}
+
+@media(max-width:900px){
+
+header{
+
+padding:20px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+}
+
+.ip{
+
+font-size:24px;
+
+}
+
+.news{
+
+grid-template-columns:1fr;
+
+}
+
 }
 
 </style>
@@ -173,8 +448,16 @@ margin:0 10px;
 
 <nav>
 
-<a href="#modos">Modos</a>
-<a href="#status">Status</a>
+<a href="#">Início</a>
+
+<a href="#modes">Modos</a>
+
+<a href="#stats">Status</a>
+
+<a href="#news">Notícias</a>
+
+<a href="#">Loja</a>
+
 <a href="#">Discord</a>
 
 </nav>
@@ -187,67 +470,330 @@ margin:0 10px;
 
 <h1>SWICE</h1>
 
-<p>Servidor Competitivo Minecraft 1.8.9</p>
+<p>Minecraft PvP 1.8.9 • Competitivo • Rápido • Estável</p>
 
-<button onclick="copiarIP()">Copiar IP</button>
+<div class="buttons">
+
+<a class="btn play">JOGAR AGORA</a>
+
+<a class="btn discord">DISCORD</a>
+
+</div>
+
+<div class="ipbox">
 
 <div class="ip">
+
 Swice.Network
+
+</div>
+
+<button class="copy" onclick="copyIP()">
+
+COPIAR IP
+
+</button>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="modos">
+<section id="modes">
 
-<h2>Modos de Jogo</h2>
+<h2 class="title">Nossos Modos</h2>
 
 <div class="cards">
 
 <div class="card">
+
 <h3>⚔ Practice</h3>
-<p>Treine PvP contra jogadores experientes.</p>
+
+<p>
+Treine sua mira, combos e movimentação contra jogadores de todo o Brasil.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🥋 Duels</h3>
-<p>Desafie seus amigos em batalhas 1x1.</p>
+
+<h3>🏹 BedWars</h3>
+
+<p>
+Proteja sua cama, monte estratégias e vença partidas épicas.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🏆 Ranked</h3>
-<p>Suba no ranking e torne-se um dos melhores.</p>
+
+<h3>🏝 SkyWars</h3>
+
+<p>
+Lute nas ilhas, encontre os melhores equipamentos e seja o último sobrevivente.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🎉 Eventos</h3>
-<p>Competições e eventos exclusivos.</p>
+
+<h3>⚡ Duels</h3>
+
+<p>
+Desafie seus amigos em diversos kits e prove quem realmente domina o PvP.
+</p>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="status">
+<section id="stats">
 
-<h2>Status</h2>
+<h2 class="title">
+
+Status do Servidor
+
+</h2>
 
 <div class="stats">
 
 <div class="stat">
-<h3>24/7</h3>
-<p>Servidor Online</p>
+
+<h2 id="online">0</h2>
+
+<p>Jogadores Online</p>
+
 </div>
 
 <div class="stat">
-<h3>1.8.9</h3>
+
+<h2>24/7</h2>
+
+<p>Disponibilidade</p>
+
+</div>
+
+<div class="stat">
+
+<h2>1.8.9</h2>
+
 <p>Versão Principal</p>
+
 </div>
 
 <div class="stat">
-<h3>Baixo Ping</h3>
-<p>Conexão otimizada</p>
+
+<h2>20ms</h2>
+
+<p>Ping Médio</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="news">
+
+<h2 class="title">
+
+Últimas Notícias
+
+</h2>
+
+<div class="news">
+
+<div class="post">
+
+<h2>
+
+Bem-vindo ao SWICE!
+
+</h2>
+
+<br>
+
+<p>
+
+O SWICE foi criado para entregar uma experiência competitiva em Minecraft 1.8.9.
+
+Nossa equipe trabalha diariamente para oferecer estabilidade, desempenho e uma comunidade saudável.
+
+</p>
+
+<br>
+
+<p>
+
+✔ AntiCheat otimizado
+
+</p>
+
+<p>
+
+✔ Baixa latência
+
+</p>
+
+<p>
+
+✔ Eventos frequentes
+
+</p>
+
+<p>
+
+✔ Equipe ativa
+
+</p>
+
+<br>
+
+<a class="btn play">
+
+Entrar Agora
+
+</a>
+
+</div>
+
+<div class="sidebar">
+
+<div class="widget">
+
+<h3>
+
+💬 Discord
+
+</h3>
+
+<br>
+
+<p>
+
+Entre em nossa comunidade para participar de eventos, receber anúncios e conversar com outros jogadores.
+
+</p>
+
+</div>
+
+<div class="widget">
+
+<h3>
+
+🏪 Loja
+
+</h3>
+
+<br>
+
+<p>
+
+Adquira VIPs, cosméticos e benefícios exclusivos para apoiar o servidor.
+
+</p>
+
+</div>
+
+<div class="widget">
+
+<h3>
+
+🛡 AntiCheat
+
+</h3>
+
+<br>
+
+<p>
+
+Sistema desenvolvido para manter as partidas justas e competitivas.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+
+Perguntas Frequentes
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+Como entrar?
+
+</h3>
+
+<p>
+
+Abra o Minecraft 1.8.9, clique em Multiplayer e adicione o IP <b>Swice.Network</b>.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Preciso de Minecraft Original?
+
+</h3>
+
+<p>
+
+Não. O servidor aceita contas Premium e Cracked, conforme a configuração do servidor.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Existe VIP?
+
+</h3>
+
+<p>
+
+Sim! Em breve nossa loja estará disponível com diversas vantagens cosméticas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Discord Oficial
+
+</h3>
+
+<p>
+
+Nosso Discord será divulgado em breve na página inicial.
+
+</p>
+
 </div>
 
 </div>
@@ -256,39 +802,148 @@ Swice.Network
 
 <footer>
 
-<h3>SWICE</h3>
+<h2>SWICE</h2>
 
-<p>IP Oficial</p>
-
-<h2 style="color:#3ea6ff;">Swice.Network</h2>
-
-<p>
-
-<a href="#">Discord</a>
-
-<a href="#">YouTube</a>
-
-<a href="#">TikTok</a>
-
+<p style="margin-top:10px;color:#cdd6e5;">
+Minecraft Competitivo 1.8.9
 </p>
+
+<div style="margin-top:35px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+
+<a class="btn play" href="#">
+JOGAR AGORA
+</a>
+
+<a class="btn discord" href="#">
+DISCORD
+</a>
+
+<a class="btn discord" href="#">
+LOJA
+</a>
+
+</div>
+
+<br><br>
+
+<h3 style="color:#2d8cff;">
+IP Oficial
+</h3>
+
+<h1 style="margin-top:10px;">
+Swice.Network
+</h1>
 
 <br>
 
-<p>© 2026 Swice Network - Todos os direitos reservados.</p>
+<p style="opacity:.7;">
+
+© 2026 Swice Network. Todos os direitos reservados.
+
+</p>
 
 </footer>
 
 <script>
 
-function copiarIP(){
+function copyIP(){
 
 navigator.clipboard.writeText("Swice.Network");
 
-alert("IP copiado!");
+const botao=document.querySelector(".copy");
+
+botao.innerHTML="✔ COPIADO!";
+
+setTimeout(()=>{
+
+botao.innerHTML="COPIAR IP";
+
+},2000);
 
 }
+
+let online=document.getElementById("online");
+
+let jogadores=0;
+
+let alvo=327;
+
+let intervalo=setInterval(()=>{
+
+jogadores++;
+
+online.innerHTML=jogadores;
+
+if(jogadores>=alvo){
+
+clearInterval(intervalo);
+
+}
+
+},8);
+
+const elementos=document.querySelectorAll(".card,.stat,.post,.widget");
+
+const revelar=()=>{
+
+const topo=window.innerHeight*0.88;
+
+elementos.forEach(el=>{
+
+const pos=el.getBoundingClientRect().top;
+
+if(pos<topo){
+
+el.style.opacity="1";
+
+el.style.transform="translateY(0px)";
+
+}
+
+});
+
+};
+
+elementos.forEach(el=>{
+
+el.style.opacity="0";
+
+el.style.transform="translateY(60px)";
+
+el.style.transition=".7s";
+
+});
+
+window.addEventListener("scroll",revelar);
+
+revelar();
+
+document.querySelectorAll("a[href^='#']").forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const alvo=document.querySelector(this.getAttribute("href"));
+
+if(alvo){
+
+window.scrollTo({
+
+top:alvo.offsetTop-70,
+
+behavior:"smooth"
+
+});
+
+}
+
+});
+
+});
 
 </script>
 
 </body>
+
 </html>
